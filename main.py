@@ -10,8 +10,11 @@ import pyvips
 from dotenv import dotenv_values
 
 
-CONFIG = dotenv_values(".env")
-PATCH_SIZE = tuple(map(int, CONFIG['PATCH_SIZE'].strip('()').split(',')))
+if os.path.exists(".env"):
+    CONFIG = dotenv_values(".env")
+    PATCH_SIZE = tuple(map(int, CONFIG['PATCH_SIZE'].strip('()').split(',')))
+else:
+    PATCH_SIZE = (768, 768)
 
 
 def get_session_indexes(sess_dict):
