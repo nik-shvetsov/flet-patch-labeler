@@ -1,0 +1,9 @@
+dist/*
+!dist/.gitkeep
+build/
+imgs/
+main.spec
+*.ipynb
+*.csv
+.env
+
